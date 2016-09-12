@@ -8,7 +8,7 @@
     "node": "4.5.0"
   },
   "scripts": {
-    "start": "babel-node index.js --presets es2015",
+    "start": "babel-node server/config --presets es2015",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
