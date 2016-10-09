@@ -8,7 +8,8 @@
     "node": "4.5.0"
   },
   "scripts": {
-    "start": "babel-node server/ --presets es2015",
+    "start": "open http://localhost:8081 && babel-node server/ --presets es2015",
+    "webpack-dev": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +24,13 @@
   "homepage": "https://github.com/eliasparis/ultimatedevtecnifight#readme",
   "devDependencies": {
     "babel-cli": "^6.14.0",
-    "babel-core": "^6.14.0",
-    "babel-preset-es2015": "^6.14.0"
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.16.0"
   }
 }
