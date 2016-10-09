@@ -11,7 +11,6 @@ module.exports = {
 			{
 				test: /.js?$/,
 				loader: 'babel-loader',
-				include: '/client/',
 				query: {
 					presets: ['es2015']
 				}

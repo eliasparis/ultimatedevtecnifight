@@ -2,7 +2,7 @@
   "name": "ultimatedevtecnifight",
   "version": "0.0.1",
   "description": "Tecnifight codingame leaderboard ",
-  "main": "index.js",
+  "main": "server/index.js",
   "engineStrict": true,
   "engines": {
     "node": "4.5.0"
@@ -29,6 +29,8 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "copy-webpack-plugin": "^3.0.1",
+    "httpdispatcher": "1.1.0",
+    "node-static": "^0.7.9",
     "webpack": "^1.13.2"
   },
   "dependencies": {
