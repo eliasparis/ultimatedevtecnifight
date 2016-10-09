@@ -1,3 +1,18 @@
-const a = ['s', 'sdf'];
+import http from "http";
 
-a.map(aaa => console.log(aaa))
+const PORT = 8080;
+
+function handler(request, response){
+	response.end(`FUNCIONAAAAAAA ${request.url}`);
+};
+
+const server = http.createServer(handler);
+
+server
+	.listen(
+		PORT, 
+		function(){ 
+			console.log(`You are listening at ${PORT}`);
+			console.log(`Open your browser at http://localhost:${PORT}`);
+		}
+	);
