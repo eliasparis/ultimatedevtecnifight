@@ -17,5 +17,13 @@ dispatcher.onGet("/", function(request, response) {
 	});
 });	
 
+dispatcher.onGet("/cms", function(request, response) {
+
+	response.writeHead(200, {"Content-Type": "text/html"});
+
+	fs.readFile('./public/cms.html', 'utf8', function (err,data) {
+	    response.end(data);
+	});
+});	
 
 export default router;
