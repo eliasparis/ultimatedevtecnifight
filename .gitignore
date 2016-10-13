@@ -40,3 +40,5 @@ jspm_packages
 .DS_Store
 public
 build
+server/config/ultimatedevtecnifight-785909ce343d.json
+server/config/databaseurl.js

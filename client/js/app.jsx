@@ -16,4 +16,18 @@ class CMS extends React.Component {
 	}
 }
 
-ReactDOM.render(<CMS/>, cms)
+class Home extends React.Component {
+	render(){
+		return (
+			<h2> La fucking home </h2>
+		);
+	}
+}
+
+if (cms) {
+	ReactDOM.render(<CMS/>, cms)
+};
+
+if (home) {
+	ReactDOM.render(<Home/>, home)
+};
