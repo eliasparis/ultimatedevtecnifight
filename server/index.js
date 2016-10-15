@@ -1,7 +1,8 @@
 import http from "http";
 import dispatcher from "httpdispatcher";
 import router from "./router.js";
-import firebase from "firebase";
+import { eventInitializer } from "./events.js";
+import { dbInitializer } from "./dbset";
 
 const PORT = 8080;
 
@@ -24,20 +25,9 @@ server
 		}
 	);
 
-firebase.initializeApp({
+//Initialize firebase conection
+dbInitializer();
 
-  databaseURL: ""
-});
+//Create events instance
+eventInitializer();
 
-const db = firebase.database();
-const ref = db.ref("events");
-
-ref.once("value", function(snapshot) {
-  console.log(snapshot.val());
-});
-
-ref.on("value", function(snapshot) {
-  console.log(snapshot.val());
-}, function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
-});
