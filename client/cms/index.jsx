@@ -6,7 +6,7 @@ export default class CMS extends React.Component {
 		return (
 			<div>
 				<h2> CMS </h2>
-				<Dataviewport></Dataviewport>
+				<Dataviewport events={ events }></Dataviewport>
 			</div>
 		);
 	}
