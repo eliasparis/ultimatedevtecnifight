@@ -8,12 +8,28 @@ export default class Dataviewport extends React.Component {
 					Object
 						.keys(this.props.events)
 						.map((line) => 
-							<li key={ this.props.events[line].title } >
-								{ this.props.events[line].title }
-							</li>
+							<Eventdata 
+								key={ this.props.events[line].title } 
+								data={ this.props.events[line] } >
+							</Eventdata>
 						)
 				}
 			</ul>
 		);
 	}
 };
+
+class Eventdata extends React.Component {
+	render(){
+		return(
+			<li className={	this.props.data.ended ? 'ended' : '' }>
+				{ this.props.data.title } , 
+			</li>
+		);
+	}
+};
+
+
+
+
+
