@@ -20,10 +20,16 @@ export default class Dataviewport extends React.Component {
 };
 
 class Eventdata extends React.Component {
+
 	render(){
+		
+		const data = this.props.data;
+
 		return(
-			<li className={	this.props.data.ended ? 'ended' : '' }>
-				{ this.props.data.title } , 
+			<li className={	data.ended ? 'ended' : '' }>
+				{ data.title } ---
+				<span> Date begin : X </span> ,
+				<span> Date end : Y </span> ,				
 			</li>
 		);
 	}
