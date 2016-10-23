@@ -28,8 +28,9 @@ class Eventdata extends React.Component {
 		return(
 			<li className={	data.ended ? 'ended' : '' }>
 				{ data.title } ---
-				<span> Date begin : X </span> ,
-				<span> Date end : Y </span> ,				
+				<span> Date begin : {data.date_begin} </span> ,
+				<span> Date end : {data.date_end} </span> 
+				<span> /\ _________ Winner -> { data.winner ? data.winner.toUpperCase() : 'Aún no acabó' }</span>			
 			</li>
 		);
 	}

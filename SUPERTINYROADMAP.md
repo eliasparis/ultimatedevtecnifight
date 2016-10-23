@@ -1,12 +1,26 @@
-##  Little cms
+- Home
+	- Landing
+		- Current event
+		- Time to end
+		(events)
 
-Route to render the cms frontpage at /cms.
-Response with a tiny react site.
-It contains:
-	two date pickers, one for the begining of the event, another for the end.
-	A textinput for an Event name.
-	Six url inputs that have to be validated.
-	A save button.
-Then post this data to the server and return 200
+	- Current event
+		- Picture (storage)
+		- Time to end (events)
+		- Challenges (events)
+
+	- Take part (static)
+
+	- Past winners (events & ended)
+
+	- The battle (workers puntuation)
+
+
+
+
+- Workers
+	- 
+
+
 
 

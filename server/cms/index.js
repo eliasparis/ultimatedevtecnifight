@@ -23,11 +23,17 @@ const addCmsData = function(request, response){
 
 	const ref = eventDbRef();
 
-	console.log(request.params);
+	const push = ref.push(JSON.parse(request.body));
+	const key = push.key;
 
-	//ref.push(request.params);
+	const reqbody = JSON.parse(request.body);
 
-	response.end(request.params)
+	db
+		.ref("stats/" + key)
+		.set({ "title" : reqbody.title });
+
+	response.writeHead(200, {"Content-Type": "text/html"})
+	response.end('OK');
 }
 
 function eventDbRef(){

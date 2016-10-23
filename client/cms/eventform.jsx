@@ -52,9 +52,10 @@ export default class Eventform extends React.Component {
 		
 		request
 			.post('/api/event')
+			.set('Content-Type', 'application/json')
 			.send(data)
 			.end(( err, res ) => {
-				console.log(JSON.parse(res.text));
+				console.log(res.text);
 				console.log(err);
 			})
 	}

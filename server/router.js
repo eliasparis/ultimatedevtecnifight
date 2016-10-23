@@ -1,7 +1,6 @@
 import dispatcher from "httpdispatcher";
-import fs from "fs";
-import ejs from "ejs";
 import { getCmsData, addCmsData } from "./cms";
+import Home from "./home";
 
 
 //Throw the dispatcher
@@ -14,12 +13,7 @@ const router = function(request, response){
 //Get
 dispatcher.onGet("/", function(request, response) {
 
-	response.writeHead(200, {"Content-Type": "text/html"});
-
-	fs.readFile('./public/index.html', 'utf8', function (err, data) {
-	    
-	   response.end(data);
-	});
+	Home(request, response);
 });	
 
 dispatcher.onGet("/cms", function(request, response) {
