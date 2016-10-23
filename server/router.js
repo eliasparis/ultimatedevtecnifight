@@ -1,7 +1,7 @@
 import dispatcher from "httpdispatcher";
 import fs from "fs";
 import ejs from "ejs";
-import getCmsData from "./cms";
+import { getCmsData, addCmsData } from "./cms";
 
 
 //Throw the dispatcher
@@ -11,6 +11,7 @@ const router = function(request, response){
 };
 
 //Routes definition
+//Get
 dispatcher.onGet("/", function(request, response) {
 
 	response.writeHead(200, {"Content-Type": "text/html"});
@@ -24,6 +25,12 @@ dispatcher.onGet("/", function(request, response) {
 dispatcher.onGet("/cms", function(request, response) {
 	
 	getCmsData(request, response);
+});	
+
+//Post
+dispatcher.onPost("/api/event", function(request, response) {
+	
+	addCmsData(request, response);
 });	
 
 export default router;

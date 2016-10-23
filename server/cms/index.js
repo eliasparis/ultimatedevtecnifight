@@ -5,7 +5,7 @@ import { db } from "../dbset";
 
 const getCmsData = function(request, response) {
 
-	const ref = db.ref("events");
+	const ref = eventDbRef(); 
 
 	response.writeHead(200, {"Content-Type": "text/html"});
 
@@ -19,4 +19,20 @@ const getCmsData = function(request, response) {
 	});
 };
 
-export default getCmsData;
+const addCmsData = function(request, response){
+
+	const ref = eventDbRef();
+
+	console.log(request.params);
+
+	//ref.push(request.params);
+
+	response.end(request.params)
+}
+
+function eventDbRef(){
+
+	return db.ref("events");
+};
+
+export { getCmsData, addCmsData };

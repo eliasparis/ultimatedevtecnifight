@@ -1,4 +1,5 @@
 import React from "react";
+import request from "superagent";
 
 export default class Eventform extends React.Component {
 
@@ -46,7 +47,16 @@ export default class Eventform extends React.Component {
 
 	_send(){
 		//Update events database to api point
-		//Maje ajax
+		//Throw ajax
+		const data = this.state;
+		
+		request
+			.post('/api/event')
+			.send(data)
+			.end(( err, res ) => {
+				console.log(JSON.parse(res.text));
+				console.log(err);
+			})
 	}
 
 	render(){
