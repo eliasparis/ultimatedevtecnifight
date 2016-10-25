@@ -1,9 +1,15 @@
 import fs from "fs";
 import ejs from "ejs";
 import { db } from "../dbset";
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import Home from "../../client/home";
+
 
 //Home main function
 export default function (request, response) {
+
+	console.log(ReactDOMServer.renderToString(<Home />));
 
 	const ref = db.ref("events");
 	const refStats = db.ref("stats");
@@ -25,14 +31,21 @@ export default function (request, response) {
 
 				db
 					.ref("stats/" + key)
-					.once("value", function(snapshot){
+					.once("value", function(snapshotstats){
 
 						//Gettign stats from current event
-						currentEventStats = snapshot.val()
+						currentEventStats = snapshotstats.val()
 
 						//Response
 						response.writeHead(200, {"Content-Type": "text/html"});
-						response.end(data);
+						response.end(
+							ejs.render(
+								data,
+								{
+									home : ReactDOMServer.renderToString(<Home />),
+								}
+							)
+						);
 					})
 			});
 	});
