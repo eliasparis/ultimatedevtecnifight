@@ -22,12 +22,14 @@ const getCmsData = function(request, response) {
 const addCmsData = function(request, response){
 
 	const ref = eventDbRef();
-
-	const push = ref.push(JSON.parse(request.body));
-	const key = push.key;
-
+	//Request information
 	const reqbody = JSON.parse(request.body);
-
+	//Saving event data
+	const push = ref.push(reqbody);
+	//Getting the key of the saved event
+	const key = push.key;
+	
+	//Initialize a new stats object with event key
 	db
 		.ref("stats/" + key)
 		.set({ "title" : reqbody.title });

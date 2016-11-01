@@ -9,8 +9,6 @@ import Home from "../../client/home";
 //Home main function
 export default function (request, response) {
 
-	console.log(ReactDOMServer.renderToString(<Home />));
-
 	const ref = db.ref("events");
 	const refStats = db.ref("stats");
 	let events = null;

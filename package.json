@@ -30,6 +30,7 @@
     "babel-preset-es2015": "^6.14.0",
     "copy-webpack-plugin": "^3.0.1",
     "httpdispatcher": "1.0.0",
+    "superagent": "^2.3.0",
     "webpack": "^1.13.2"
   },
   "dependencies": {

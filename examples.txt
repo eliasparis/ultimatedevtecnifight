@@ -1,6 +1,41 @@
+##### eliasparis userId:  1509542
+
+
+
+
+----- Todas las personas suscritas a una compañía o grupo
+----- @@@User ID
+----- @@@Public Handler
+
 https://www.codingame.com/services/LeaderboardsRemoteService/getGlobalLeaderboard
+
 [1,{"keyword":"","active":false,"column":"","filter":""},"5e3be401f372396cc012b9b9c9a9e4d92459051",true,"company"]
 
 
-https://www.codingame.com/services/AchievementRemoteService/findBestByCodingamerId
-[1158783,3]
+
+
+X
+----- Coger todos los datos de un juego para un usuario.
+----- Titulo del juego + id del jugador
+----- Necesita un cookie para poder acceder a esta info
+----- @@@Points at LinkedAchievements
+----- @@@Game title
+----- @@@Linked achievements Id 
+----- XXXSolo puede acceder el propio jugador
+
+https://www.codingame.com/services/PuzzleRemoteService/findProgressByPrettyId
+
+["the-descent", 1509542]
+
+
+
+
+
+----- Todos los achievement de un jugador
+----- @@@ Hacer un mach con los IDS guardados en la request de arriba
+
+https://www.codingame.com/services/AchievementRemoteService/findByCodingamerId
+
+1038882
+
+
