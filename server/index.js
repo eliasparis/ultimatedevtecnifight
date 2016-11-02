@@ -3,6 +3,7 @@ import dispatcher from "httpdispatcher";
 import router from "./router.js";
 import { eventInitializer } from "./events.js";
 import { dbInitializer } from "./dbset";
+import { workersInitializer } from "./workers";
 
 const PORT = 8080;
 
@@ -30,4 +31,7 @@ dbInitializer();
 
 //Create events instance
 eventInitializer();
+
+//Workers begin to request data
+workersInitializer();
 
